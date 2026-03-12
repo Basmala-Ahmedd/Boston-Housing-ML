@@ -6,6 +6,7 @@ This project includes data exploration, model training, evaluation, and a Stream
 
 # Project Structure
 
+```text
 Boston-Housing-ML/
 │
 ├── data/
@@ -19,7 +20,6 @@ Boston-Housing-ML/
 │
 ├── app.py                    
 ├── README.md                 
----
 
 ## 📊 Project Overview
 
@@ -35,7 +35,7 @@ We use a **Decision Tree Regressor** to predict prices and evaluate model perfor
 
 ## 📝 Data Exploration
 
-The dataset contains 506 entries with 13 features. The target variable is `MEDV` (Median value of owner-occupied homes in $1000s).  
+The dataset contains 489 entries with 4 features. The target variable is `MEDV` (Median value of owner-occupied homes in $1000s).  
 
 We analyze the statistics, check for missing values, and observe relationships between features and target.
 
@@ -56,7 +56,7 @@ The optimal model achieved reliable predictions across training and testing sets
 
 You can interact with the model using a Streamlit web app. Enter house features to get instant price predictions.
 
-![Boston Housing App](Notebook/images/Streamlit.png)
+![Boston Housing App](Streamlit.png)
 
 **Example Input & Predictions:**
 
