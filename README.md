@@ -5,7 +5,6 @@ This project includes data exploration, model training, evaluation, and a Stream
 
 
 # Project Structure
-
 ```text
 Boston-Housing-ML/
 │
@@ -19,7 +18,11 @@ Boston-Housing-ML/
 │   └── visuals.py            
 │
 ├── app.py                    
-├── README.md                 
+├── README.md  
+│        
+├── Streamlit.png
+
+```
 
 ## 📊 Project Overview
 
