@@ -1,6 +1,8 @@
 🏠 Boston Housing Price Predictor
 
-Predict Boston housing prices using a machine learning model trained on the Boston Housing Dataset. This app allows users to enter key features of a house and get an instant prediction of its selling price.
+Predict Boston housing prices using a Decision Tree regression model.  
+This project includes data exploration, model training, evaluation, and a Streamlit web app for interactive predictions.
+
 
 # Project Structure
 
@@ -12,7 +14,7 @@ Boston-Housing-ML/
 ├── model/
 │   └── model.pkl             # Trained Decision Tree model
 │
-├── notebook/
+├── Notebook/
 │   ├── boston_housing.ipynb  # Jupyter notebook with data exploration, model training and evaluation
 │   └── visuals.py            # Supplementary plotting functions for notebook
 │
@@ -20,64 +22,66 @@ Boston-Housing-ML/
 ├── README.md                 # Project documentation
 
 
-# Features Used
+---
 
-The model predicts house prices based on three key features:
+## 📊 Project Overview
 
-Feature	Description
-RM	Average number of rooms per dwelling
-LSTAT	Percentage of lower status population (poverty level)
-PTRATIO	Student-Teacher ratio in local schools
+This project aims to predict housing prices in Boston based on features such as:
 
-# Usage
+- **RM**: Average number of rooms per dwelling
+- **LSTAT**: Percentage of lower status population
+- **PTRATIO**: Pupil-teacher ratio in local schools
 
-Run Jupyter Notebook
+We use a **Decision Tree Regressor** to predict prices and evaluate model performance using **R² score**.
 
-Explore the dataset, train models, and evaluate performance:
+---
 
-jupyter notebook notebook/boston_housing.ipynb
-Run Streamlit App
+## 📝 Data Exploration
 
-Launch the web application:
+The dataset contains 506 entries with 13 features. The target variable is `MEDV` (Median value of owner-occupied homes in $1000s).  
 
-streamlit run app.py
+We analyze the statistics, check for missing values, and observe relationships between features and target.
 
-Enter the house features: Rooms (RM), Poverty % (LSTAT), Pupil-Teacher Ratio (PTRATIO).
+---
 
-Click Predict Price to see the predicted selling price.
+## ⚙️ Model Training
 
-The app will display a metric box with the predicted price and provide insights about the range.
+- **Algorithm**: Decision Tree Regressor  
+- **Optimization**: GridSearchCV for `max_depth`  
+- **Cross-validation**: ShuffleSplit with 10 splits, 20% test size  
+- **Performance metric**: R² Score  
 
-# Model Details
+The optimal model achieved reliable predictions across training and testing sets.
 
-Algorithm: Decision Tree Regressor
+---
 
-Hyperparameter Optimization: GridSearchCV to find the optimal max_depth
+## 🌐 Streamlit Web Application
 
-Performance Metric: R² Score (Coefficient of Determination)
+You can interact with the model using a Streamlit web app. Enter house features to get instant price predictions.
 
-# Example Predictions
+![Boston Housing App](Notebook/images/Streamlit.png)
 
-Client	Rooms	Poverty %	PTRATIO	Predicted Price
-1	5	17	15	$424,935
-2	4	32	22	$284,200
-3	8	3	12	$933,975
+**Example Input & Predictions:**
 
-The model logically predicts higher prices for bigger houses in better neighborhoods and lower prices for smaller houses in poorer neighborhoods.
+| Feature | Client 1 | Client 2 | Client 3 |
+| --- | --- | --- | --- |
+| Rooms | 5 | 4 | 8 |
+| Poverty (%) | 17 | 32 | 3 |
+| PTRATIO | 15 | 22 | 12 |
 
-# Future Improvements
+**Predicted Selling Prices:**
 
-Add more features from the dataset, e.g., crime rate, proximity to employment centers, or property age.
+- Client 1: $419,700.00  
+- Client 2: $287,100.00
+- Client 3: $927,500.00
 
-Implement other regression models (Random Forest, Gradient Boosting) for potentially higher accuracy.
+These results align with expectations: bigger houses in better neighborhoods have higher predicted prices.
 
-Deploy the Streamlit app online using Streamlit Cloud or Heroku for public access.
+---
+📄 Notes
 
-# Author
+Make sure model/model.pkl exists before running the app.
 
-Basmala Ahmed – Machine Learning Engineer Nanodegree Project
+The app uses integer inputs for Rooms, Poverty %, and PTRATIO for simplicity.
 
-# License
-
-This project is licensed under the MIT License – see the LICENSE
- file for details
+Prediction is instant and does not require loading the full dataset.
