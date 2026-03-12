@@ -1,4 +1,4 @@
-🏠 Boston Housing Price Predictor
+# 🏠 Boston Housing Price Predictor
 
 Predict Boston housing prices using a Decision Tree regression model.  
 This project includes data exploration, model training, evaluation, and a Streamlit web app for interactive predictions.
@@ -9,19 +9,16 @@ This project includes data exploration, model training, evaluation, and a Stream
 Boston-Housing-ML/
 │
 ├── data/
-│   └── housing.csv           # Boston Housing Dataset
-│
+│   └── housing.csv          
 ├── model/
-│   └── model.pkl             # Trained Decision Tree model
+│   └── model.pkl             
 │
 ├── Notebook/
-│   ├── boston_housing.ipynb  # Jupyter notebook with data exploration, model training and evaluation
-│   └── visuals.py            # Supplementary plotting functions for notebook
+│   ├── boston_housing.ipynb  
+│   └── visuals.py            
 │
-├── app.py                    # Streamlit web application
-├── README.md                 # Project documentation
-
-
+├── app.py                    
+├── README.md                 
 ---
 
 ## 📊 Project Overview
