@@ -78,7 +78,7 @@ You can interact with the model using a Streamlit web app. Enter house features 
 These results align with expectations: bigger houses in better neighborhoods have higher predicted prices.
 
 ---
-📄 Notes
+## 📄 Notes
 
 Make sure model/model.pkl exists before running the app.
 
